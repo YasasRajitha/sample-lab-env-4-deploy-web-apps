@@ -35,11 +35,21 @@
         state: latest
 
     - name: write the apache2 ports.conf config file 
-      templates:
+      template:
         src: templates/ports.conf.j2
         dest: /etc/apache2/ports.conf
+      notify:
+        - restart apache
 
     - name: write the apache2 index.html
-      templates:
+      template:
         src: templates/index.html.j2
         dest: /var/www/html/index.html
+      notify:
+        - restart apache
+
+  handlers:
+    - name: restart apache
+      service:
+        name: apache2
+        state: restarted
