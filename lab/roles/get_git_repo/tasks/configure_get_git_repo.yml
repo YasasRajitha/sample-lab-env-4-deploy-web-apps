@@ -8,5 +8,5 @@
 - name: clone the git repo
   git:
     repo: https://github.com/YasasRajitha/littlelemon.git
-    dest: "~/littlelemon"
+    dest: "/home/vagrant/littlelemon"
     version: master
