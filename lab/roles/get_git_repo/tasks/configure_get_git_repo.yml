@@ -1,0 +1,12 @@
+---
+- name: Ensure git is installed
+  apt:
+    name: git
+    state: present
+  tags: installation
+
+- name: clone the git repo
+  git:
+    repo: https://github.com/YasasRajitha/littlelemon.git
+    dest: "~/littlelemon"
+    version: master

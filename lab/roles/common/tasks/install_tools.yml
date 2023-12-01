@@ -4,4 +4,5 @@
     - pydf
     - tree
     - open-vm-tools
+    - git
   tags: installation

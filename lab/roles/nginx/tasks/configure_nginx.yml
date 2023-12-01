@@ -1,6 +1,6 @@
 ---
 - name: "Deploy nginx sites configuration"
-  templates:
+  template:
     src: mysite.j2
     dest: "/etc/nginx/sites-enabled/mysite"
   notify: restart nginx

@@ -1,0 +1,4 @@
+---
+# tasks file for roles/get_git_repo
+
+- include: configure_get_git_repo.yml

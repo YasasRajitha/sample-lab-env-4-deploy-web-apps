@@ -1,0 +1,4 @@
+---
+# tasks file for roles/uwsgi
+
+- include: configure_uwsgi.yml

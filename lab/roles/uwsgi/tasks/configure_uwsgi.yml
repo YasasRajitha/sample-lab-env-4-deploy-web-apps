@@ -1,0 +1,36 @@
+---
+- name: ensure prerequisites installed on webservers
+  apt: name={{ item }} state=latest
+  with_items:
+    - python3.8-dev
+    - build-essential
+  tags: installation
+
+- name: ensure pip is installed
+  apt:
+    name: python-pip
+    state: present
+  tags: installation
+
+- name: activate a virtual environment and install uwsgi
+  # pip:
+    # chdir: "/home/vagrant/littlelemon/"
+    # virtualenv: "/home/vagrant/littlelemon/"
+  cd: 
+    path: /home/vagrant/littlelemon
+- command:
+    cmd: 
+      - pipenv install
+      - pipenv shell
+- pip:
+    name: uwsgi
+    state: latest
+  tags: installation
+
+- template:
+    src: "test.py"
+    dest: "/home/vagrant/littlelemon"
+  # tags: installation
+
+
+
