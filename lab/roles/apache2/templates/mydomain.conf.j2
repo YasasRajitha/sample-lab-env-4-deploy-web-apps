@@ -1,0 +1,23 @@
+Listen 8005
+
+WSGIDaemonProcess restaurant python-path=/home/vagrant/littlelemon:/home/vagrant/littlelemon/myenv/lib/python3.6
+    WSGIProcessGroup restaurant
+
+<VirtualHost *:8005>
+    ServerName hello.shopix
+    WSGIScriptAlias / /home/vagrant/littlelemon/littlelemon/wsgi.py
+    <Directory /home/vagrant/littlelemon/littlelemon>
+        <Files wsgi.py>
+            Require all granted
+        </Files>
+    </Directory>
+
+    <Directory /home/vagrant/littlelemon>
+        WSGIProcessGroup restaurant
+        WSGIApplicationGroup %{GLOBAL}
+        Require all granted
+    </Directory>
+
+    ErrorLog /home/vagrant/logs_folder/apache.error.log
+    CustomLog /home/vagrant/logs_folder/apache.custom.log common
+</VirtualHost>

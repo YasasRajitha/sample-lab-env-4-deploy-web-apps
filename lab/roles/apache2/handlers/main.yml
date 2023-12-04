@@ -2,3 +2,7 @@
   service:
     name: apache2
     state: restarted
+
+- name: Enable virtual host
+  become: true
+  command: a2ensite mydomain.conf

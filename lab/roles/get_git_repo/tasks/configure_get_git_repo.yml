@@ -9,4 +9,8 @@
   git:
     repo: https://github.com/YasasRajitha/littlelemon.git
     dest: "/home/vagrant/littlelemon"
+    update: no
+    # force: yes
+    # clone: no
+    # diff_filter: "AM"
     version: master

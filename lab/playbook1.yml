@@ -37,7 +37,7 @@
     - common
     - apache2
     - get_git_repo
-    - uwsgi
+    # - uwsgi
   tags: web
 
 - hosts: proxy
