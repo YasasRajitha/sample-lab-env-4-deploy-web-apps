@@ -4,11 +4,11 @@
     state: latest
   tags: installation
 
-- name: ensure the availability of mod_wsgi apache module
-  apt:
-    name: libapache2-mod-wsgi
-    state: latest
-  tags: installation
+# - name: ensure the availability of mod_wsgi apache module
+#   apt:
+#     name: libapache2-mod-wsgi
+#     state: latest
+#   tags: installation
 
 - name: copy template to sites-available
   template:

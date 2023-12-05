@@ -6,6 +6,15 @@
   notify: restart nginx
   tags: configuration
 
+- name: Nginx conf for accessing static files
+  template:
+    src: mydomain.j2
+    dest: /etc/nginx/conf.d/mydomain.conf
+  notify: restart nginx
+  tags: configuration
+
 - name: "Remove defaults"
   file: path="/etc/nginx/sites-enabled/default" state=absent
   tags: configuration
+
+

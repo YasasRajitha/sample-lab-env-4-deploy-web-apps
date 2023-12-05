@@ -1,0 +1,28 @@
+    upstream apache_server_static{
+        server web01:8005;
+        server web02:8005;
+    }
+
+    upstream gunicorn_dynamic {
+        server web01:8006;
+        server web02:8006;
+    }
+
+    server {
+        listen 82;
+
+        location / {
+            proxy_pass http://gunicorn_dynamic/;
+        }
+
+        location /static {
+            proxy_pass http://apache_server_static/static/;
+            
+        }
+            
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        error_page   500 502 503 504 /50x.html;
+
+    }
