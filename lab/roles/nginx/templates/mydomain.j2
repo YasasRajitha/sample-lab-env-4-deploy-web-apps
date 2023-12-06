@@ -10,6 +10,7 @@
 
     server {
         listen 82;
+        # server_name lit.lemon;
 
         location / {
             proxy_pass http://gunicorn_dynamic/;

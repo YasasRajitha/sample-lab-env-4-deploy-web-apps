@@ -7,9 +7,11 @@ Listen 8005
 
     # DocumentRoot /home/vagrant/littlelemon/
 
-    Alias /static/ /littlelemon/static/
+    # ServerName lit.lemon
 
-    <Directory /littlelemon/static/>
+    Alias /static/ /home/vagrant/littlelemon/static/
+
+    <Directory /home/vagrant/littlelemon/static/>
         
         Options Indexes FollowSymLinks
         AllowOverride None
