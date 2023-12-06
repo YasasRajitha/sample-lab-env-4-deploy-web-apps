@@ -7,7 +7,7 @@
 
 3. In a new Directory copy this respository:
 ``` shell
-git clone https://github.com/bradmorg/ansible-labs.git
+git clone https://github.com/YasasRajitha/ansible-labs.git
 ```
 
 4. Start the vagrant instance.
