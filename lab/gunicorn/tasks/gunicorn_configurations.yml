@@ -5,6 +5,12 @@
   with_items:
     - python3.8-dev
     - build-essential
+    - virtualenv
+    - python3-pip
+    - python-pip
+    - libmysqlclient-dev
+    - pkg-config
+  notify: re-sourcing
   tags: installation
 
 - name: set python3 as default 
@@ -26,6 +32,12 @@
     chdir: /home/vagrant/littlelemon/
     executable: /bin/bash
   register: gunicorn_location
+
+- name: Ensure the existency of conf directory
+  file:
+    path: /home/vagrant/conf
+    state: directory
+    mode: 0755
 
 - name: create and run gunicorn config file
   template:
