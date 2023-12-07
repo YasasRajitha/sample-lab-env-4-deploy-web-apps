@@ -1,0 +1,4 @@
+command = '{{gunicorn_location.stdout}}'
+pythonpath = '/home/vagrant/littlelemon'
+bind = '{{ ansible_facts['nodename'] }}:8006'
+workers = 3

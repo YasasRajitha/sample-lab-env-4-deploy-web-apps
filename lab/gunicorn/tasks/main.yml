@@ -1,0 +1,4 @@
+---
+# tasks file for gunicorn
+
+- include: gunicorn_configurations.yml

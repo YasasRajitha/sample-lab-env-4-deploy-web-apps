@@ -1,0 +1,36 @@
+---
+
+- name: ensure prerequisites installed on webservers
+  apt: name={{ item }} state=latest
+  with_items:
+    - python3.8-dev
+    - build-essential
+  tags: installation
+
+- name: set python3 as default 
+  command: update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+
+- name: activate venv
+  pip:
+    requirements: /home/vagrant/littlelemon/requirements.txt
+    chdir: /home/vagrant/littlelemon/
+    virtualenv: /home/vagrant/littlelemon/
+    state: latest
+  tags: always
+
+- name: find gunicorn location
+  shell: |
+    source bin/activate
+    which gunicorn
+  args:
+    chdir: /home/vagrant/littlelemon/
+    executable: /bin/bash
+  register: gunicorn_location
+
+- name: create and run gunicorn config file
+  template:
+    src: gunicorn_config.py.j2
+    dest: /home/vagrant/conf/gunicorn_config.py
+  notify: start gunicorn
+  tags: always
+
