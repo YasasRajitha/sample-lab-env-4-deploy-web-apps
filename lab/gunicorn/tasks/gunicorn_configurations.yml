@@ -10,7 +10,7 @@
     - python-pip
     - libmysqlclient-dev
     - pkg-config
-  notify: re-sourcing
+  # notify: re-sourcing
   tags: installation
 
 - name: set python3 as default 

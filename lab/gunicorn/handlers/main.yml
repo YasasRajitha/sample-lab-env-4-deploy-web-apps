@@ -8,5 +8,5 @@
     venv: /home/vagrant/littlelemon/
     conf: /home/vagrant/conf/gunicorn_config.py
 
-- name: re-sourcing
-  command: source /home/vagrant/.bashrc
+# - name: re-sourcing
+#   command: source /home/vagrant/.bashrc

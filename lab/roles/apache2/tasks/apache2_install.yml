@@ -15,8 +15,9 @@
     src: templates/mydomain.conf.j2
     dest: /etc/apache2/sites-available/mydomain.conf
   notify:
+    - Enaple apache2 vhost_alias
+    - Enable mydomain as virtual host
     - restart apache
-    - Enable virtual host
   tags: configuration
 
 - name: write the apache2 ports.conf config file 

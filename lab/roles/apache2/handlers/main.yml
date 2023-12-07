@@ -3,6 +3,9 @@
     name: apache2
     state: restarted
 
-- name: Enable virtual host
+- name: Enaple apache2 vhost_alias
+  command: a2enmod vhost_alias
+
+- name: Enable mydomain as virtual host
   become: true
   command: a2ensite mydomain.conf
