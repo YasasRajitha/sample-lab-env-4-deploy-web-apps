@@ -45,4 +45,4 @@ cd /vagrant/lab
 ansible-playbook -i hosts -K playbook1.yml
 ```
 
-11. Then load the website on a browser through loadbalancer ip and given port (192.168.56.104:82).
+11. Then load the webapp on a browser through loadbalancer ip and given port (192.168.56.104:82).
