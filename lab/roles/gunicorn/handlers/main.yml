@@ -1,12 +1,12 @@
 ---
 # handlers file for gunicorn
 
-- name: start gunicorn
-  gunicorn:
-    app: littlelemon.wsgi
-    chdir: /home/vagrant/
-    venv: /home/vagrant/littlelemon/
-    conf: /home/vagrant/conf/gunicorn_config.py
+# - name: start gunicorn
+#   gunicorn:
+#     app: littlelemon.wsgi
+#     chdir: /home/vagrant/
+#     venv: /home/vagrant/littlelemon/
+#     conf: /home/vagrant/conf/gunicorn_config.py
 
 # - name: re-sourcing
 #   command: source /home/vagrant/.bashrc
