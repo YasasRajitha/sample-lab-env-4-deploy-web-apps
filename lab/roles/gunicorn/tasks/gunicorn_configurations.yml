@@ -39,6 +39,12 @@
     state: directory
     mode: 0755
 
+- name: Ensure the existency of logs_folder
+  file:
+    path: /home/vagrant/logs_folder
+    state: directory
+    mode: 0755
+
 - name: create and run gunicorn config file
   template:
     src: gunicorn_config.py.j2
