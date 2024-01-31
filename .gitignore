@@ -11,6 +11,16 @@
 !.vscode/extensions.json
 *.md
 
+ansible-lab1
+ansible-lab2
+ansible-lab3
+ansible-lab4
+ansible-lab5
+ansible-lab6
+ansible-lab7
+ansible-lab8
+ansible-lab9
+
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
