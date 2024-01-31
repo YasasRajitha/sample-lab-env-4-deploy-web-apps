@@ -1,4 +1,4 @@
-# ansible-labs
+# sample-lab-env-4-deploy-web-apps
 
 ## How to use these Labs
 1. Install Oracle Virtual Box:  https://www.virtualbox.org/
